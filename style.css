@@ -9,3 +9,24 @@
 .hr{
    height: 1px;
 }
+
+
+
+/* Main Area Started */ 
+
+
+.tabs a{
+
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   color: #252525B2;
+   background-color: #25252526;
+   margin: 8px;
+   border-radius: 8px;
+   min-height: 50px;
+   min-width: 130px;
+  
+
+}
+
