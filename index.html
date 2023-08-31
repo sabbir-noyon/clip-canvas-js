@@ -28,6 +28,38 @@
 </head>
 <body>
 
+     <!--Navigation Section Start-->
+    <header class="bg-white  mx-auto py-6 px-10 lg:py-10 lg:px-16">
+        <nav class="flex lg:flex-row lg:justify-between flex-col">
+            <img class="lg:w-auto lg:mx-0 w-72 mx-auto mt-6 lg:mt-0" src="icons/Logo.png" alt="Logo">
+
+           <button class="lg:py-3 lg:px-6  w-48  py-3  lg:mx-0 mt-6 lg:mt-0 mx-auto bg-[#25252533] rounded-md"><a class="lg:text-lg  lg:font-medium  text-xl font-medium text-[#252525]">Sort by view</a></button>
+            
+           
+            <!--modal-->
+           <!-- Open the modal using ID.showModal() method -->
+           <div class="mx-auto lg:mx-0 mt-5 lg:mt-0">
+                <button class="btn py-3 px-6 bg-[#FF1F3D] text-base font-medium text-white rounded-md hover:text-white  hover:bg-green-700 outline-none  " onclick="my_modal_1.showModal()">Blog</button>
+                <dialog id="my_modal_1" class="modal">
+                    <form method="dialog" class="modal-box">
+                        <h3 class="font-bold text-lg">Hello!</h3>
+                        <p class="py-4">Press ESC key or click the button below to close</p>
+                        <div class="modal-action">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn py-1 px-4 bg-[#FF1F3D] text-base font-medium text-white rounded-md hover:text-white  hover:bg-green-700 outline-none my-0 mx-auto">Close</button>
+                        </div>
+                    </form>
+                </dialog>
+           </div>
+
+
+        </nav>
+
+        <hr class="hr bg-[#171717] mt-10 ">
+
+  
+    </header>
+     <!--Navigation Section End-->
     
 
     
