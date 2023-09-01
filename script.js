@@ -46,7 +46,7 @@ const handleApiCategories = async () => {
     } );
     
     
-     //console.log(data.data[0]);
+     //console.log(data.data);
 
 
 };
@@ -59,7 +59,15 @@ const handleApiCategories = async () => {
 
 
     // on-clicking data 
-    const allDataByClick = (kolamula) => {
+    const allDataByClick = async (kolamula) => {
+
+        const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${kolamula}`);
+
+        const data = await response.json();
+
+        console.log(data.data);
+
+
 
         console.log(kolamula);
 
