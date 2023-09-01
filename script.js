@@ -65,29 +65,78 @@ const handleApiCategories = async () => {
 
         const data = await response.json();
 
-        console.log(data.data);
+        //console.log(data.data);
+
+        //console.log(kolamula);
+
+        
+        
+        // Getting Card Container By ID
+        const cardContainer = document.getElementById('card-container-id');
+
+        
+        data.data?.forEach((mainData) => {
+
+            //console.log(mainData);
+
+            const divForCards = document.createElement("div");
+
+            divForCards.innerHTML = `
+            
+            <div class="cards pb-6">
+
+                    <div class="card-image" >
+                        <img class=" w-full h-72 " src=${mainData?.thumbnail}>
+                        
+                    </div>
+
+                    <div class="alla-body  flex">
+
+                        <div class="profile-img  h-10 rounded min-w-fit pl-2 mt-5 mr-4">
+                            <img src="images/Screenshot_1.png">
+                        </div>
+
+                        <div class="main">
+                            <h4 class="mt-4 text-2xl font-bold text-[#171717]">${mainData?.title}</h4>
+
+                            <div class="flex">
+                                <p class="text-xl font-normal mt-3">${mainData?.authors[0].profile_name}</p>
+                                ${mainData?.authors[0].verified !== false && mainData?.authors[0].verified !=="" ? '<img class="w-8 h-8 mt-2 ml-2" src="icons/Twitter_Verified_Badge.svg.png">' : ''}
+                            </div>
+
+                            <p class="text-xl font-normal mt-2">${mainData?.others?.views} </p>
+
+
+                        </div>
+                    
+                    </div>
+    
+                </div>
 
 
 
-        console.log(kolamula);
+
+            `;
+
+
+            cardContainer.appendChild(divForCards);
+
+
+
+
+
+
+
+
+
+
+
+        });
 
 
    
 
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 
 
 
