@@ -1,6 +1,4 @@
 
-
-
 // calling blog.html
 
 const openBlog = () => {
@@ -35,7 +33,7 @@ const handleApiCategories = async () => {
 
         div.innerHTML=`
 
-        <a onclick = "allDataByClick('${apiCatagories.category_id}')" class="tab">${apiCatagories.category}</a> 
+        <a  onclick = "allDataByClick('${apiCatagories.category_id}')" class="tab">${apiCatagories.category}</a> 
         
         
         ` ;
@@ -58,6 +56,12 @@ const handleApiCategories = async () => {
 
 
 
+
+
+
+
+
+
     // on-clicking data 
     const allDataByClick = async (kolamula) => {
 
@@ -66,6 +70,10 @@ const handleApiCategories = async () => {
         const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${kolamula}`);
 
         const data = await response.json();
+
+
+
+
 
         //console.log(data.data);
 
@@ -190,6 +198,32 @@ const handleApiCategories = async () => {
     }
 
 
+
+
+
+
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
     allDataByClick(1000);
 
 
@@ -202,5 +236,5 @@ const handleApiCategories = async () => {
 
 
 
-
+    // sortingHandler()
 

@@ -3,9 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
+    <title>Document</title>
+    <!--Tailwind CSS Links / CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-red-600 ">
+    <h1 class="lg:text-7xl  text-5xl text-white font-bold text-center lg:p-10 p-5">PH Tube Blogs</h1>
     
+
+    <div class="lg:p-12 lg:px-20 p-6 lg:pb-28 pb-14 bg-green-950  mx-auto text-center">
+        <h2 class="lg:text-6xl text-3xl text-white font-bold  lg:p-14 p-7 text-center lg:text-left lg:-ml-14" >Blog Questions :</h2>
+        <ol class="text-center" type="1">
+            <li class="text-amber-600 lg:text-4xl text-3xl text-center lg:text-left  font-semibold"> <br> Question: Discuss the scope of var, let, and const</li>
+            <br>
+            
+            <li class="text-white lg:text-2xl text-xl text-center lg:text-left  font-semibold"> <br><u>Answer:</u> <br> <br> var, let, and const:
+
+                var:
+                
+                Function Scope: Variables declared with var have function scope. They are accessible anywhere within the function in which they are declared, but not outside of it.
+                Hoisting: var declarations are hoisted to the top of their containing function or global scope, which means you can use them before declaring them.
+                let:
+                
+                Block Scope: Variables declared with let have block scope. They are accessible only within the block (enclosed by curly braces) in which they are declared.
+                No Hoisting: let declarations are also hoisted, but they are not initialized until the interpreter reaches the declaration in the code. Accessing them before declaration results in a ReferenceError.
+                const:
+                
+                Block Scope: Like let, variables declared with const also have block scope.
+                Constant Value: const variables cannot be reassigned after they are assigned a value. However, the value they hold may be mutable if it's an object or an array.
+                In summary, var has function scope and is hoisted, let and const have block scope, and const additionally enforces immutability of the variable reference (not necessarily the value it points to). It's generally recommended to use let and const over var in modern JavaScript to avoid unexpected behaviors.
+
+            </li>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+
+                <li class="text-amber-600 lg:text-4xl text-3xl text-center lg:text-left  font-semibold"><br> Question:  Tell us the use cases of null and undefined</li>
+           
+            <li class="text-white lg:text-2xl text-xl text-center lg:text-left  font-semibold"><br> <u>Answer:</u> <br> <br>  Use Cases of null and undefined:
+
+                null:
+                
+                null is often used to represent the intentional absence of any object value or as a placeholder for an object value that hasn't been provided yet.
+                It can be assigned to variables or properties when you want to explicitly indicate that no meaningful value is present.
+                It's commonly used when dealing with APIs or functions that might return no results or to clear the value of a variable or property.
+                undefined:
+                
+                undefined typically indicates that a variable has been declared but hasn't been assigned any value.
+                It can also be returned when accessing object properties that don't exist.
+                It's often used as the default value for function parameters when the caller doesn't provide a value.
+                In some cases, it's an indicator of an error or an unintended absence of a value in your code.
+                These distinctions in scope and usage help developers write more predictable and maintainable code in JavaScript.
+                
+                
+                
+
+                <li class="text-amber-600 lg:text-4xl text-3xl text-center lg:text-left  font-semibold"><br><br><br> Question:  What do you mean by REST API?</li>
+           
+                <li class="text-white lg:text-2xl text-xl text-center lg:text-left  font-semibold"><br> <u>Answer:</u> <br> <br>  REST API stands for Representational State Transfer Application Programming Interface. It's an architectural style for designing networked applications. REST is not a protocol but a set of constraints and principles that provide a lightweight and scalable approach to designing web services. Here's what REST API means:
+
+                    Resources: In REST, everything is treated as a resource, which can be an object, data, or service that your application provides. Resources are identified by URLs (Uniform Resource Locators).
+                    
+                    Stateless: REST APIs are stateless, meaning each request from a client to a server must contain all the information needed to understand and process the request. The server doesn't store any client state between requests.
+                    
+                    HTTP Verbs: REST APIs use standard HTTP methods like GET (retrieve data), POST (create data), PUT (update data), DELETE (remove data), etc., to perform actions on resources. These methods are often referred to as HTTP verbs.
+                    
+                    Representations: Resources can have multiple representations, such as JSON, XML, HTML, or plain text. Clients can specify the desired representation in the request's "Accept" header.
+                    
+                    Uniform Interface: RESTful APIs have a uniform and consistent interface, making it easy to understand and use them. They follow common conventions for resource naming, URIs, and HTTP methods.
+                    
+                    Stateless Communication: Each request-response cycle between the client and server is independent, and the server doesn't store any client state. This simplifies scalability and load balancing.
+                    
+                    Layered System: REST allows for a layered system architecture, where various components (e.g., load balancers, caches, gateways) can be added to improve performance, security, and scalability.
+                    
+                    Client-Server Architecture: REST separates the client and server, allowing them to evolve independently. This separation enhances scalability and simplifies development.
+                    
+                    Cacheability: Responses from the server can be explicitly marked as cacheable or non-cacheable, improving network efficiency.
+                    
+                    Self-Descriptive Messages: REST APIs include metadata (e.g., HTTP headers) that describe the resource or its state, making it self-descriptive and reducing ambiguity.
+                    
+                    RESTful APIs have become the standard for building web services due to their simplicity, scalability, and compatibility with the HTTP protocol. They are widely used for various purposes, including web and mobile application development, IoT (Internet of Things), and integration between different software systems.
+                    
+                    
+    
+                    
+                
+                
+
+                
+                
+        </ol>
+    </div>
+    
+    
+    
+    
+    
+    
+    <script src="script.js"></script>
 </body>
 </html>
