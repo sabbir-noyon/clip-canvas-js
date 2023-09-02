@@ -61,82 +61,136 @@ const handleApiCategories = async () => {
     // on-clicking data 
     const allDataByClick = async (kolamula) => {
 
+        // console.log(kolamula);
+
         const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${kolamula}`);
 
         const data = await response.json();
 
         //console.log(data.data);
 
-        //console.log(kolamula);
+        // console.log(kolamula);
 
         
         
         // Getting Card Container By ID
         const cardContainer = document.getElementById('card-container-id');
-
+        const pseudoSection = document.getElementById('pseudo-section');
         
-        data.data?.forEach((mainData) => {
 
-            //console.log(mainData);
 
-            const divForCards = document.createElement("div");
+        // This is Major Part to Make Container  Empty Before / .......BEFORE RUNNING FOR-EACH LOOP, ITS DOING EMPTY.......
+        cardContainer.innerHTML="";
+        pseudoSection.innerHTML="";
+        
 
-            divForCards.innerHTML = `
-            
-            <div class="cards pb-6">
+        if(data.data.length === 0){
 
-                    <div class="card-image" >
-                        <img class=" w-full h-72 " src=${mainData?.thumbnail}>
-                        
-                    </div>
+            // No data found
+        
+        
+       
+        const noDataDiv = document.createElement('div');
+        noDataDiv.innerHTML = 
 
-                    <div class="alla-body  flex">
+        `
+        <div class="lg:mt-48 mt-28">
+        <img class=" my-0 mx-auto  text-center" src="icons/Icon.png">
+        </div>
+        <p class="lg:text-4xl text-3xl font-bold  mt-10  text-center ">Oops!! Sorry, There is no <br> content here</p>
+        
+        
+        
+        `
+        
+        ;
+        pseudoSection.appendChild(noDataDiv);
 
-                        <div class="profile-img  h-10 rounded min-w-fit pl-2 mt-5 mr-4">
-                            <img src="images/Screenshot_1.png">
+
+
+        }
+
+        else{
+
+
+
+            data.data?.forEach((mainData) => {
+
+                //console.log(mainData);
+    
+    
+                
+                const divForCards = document.createElement("div");
+    
+                
+                
+                divForCards.innerHTML = `
+                
+                <div class="cards pb-6">
+    
+                        <div class="card-image" >
+                            <img class=" w-full h-72 " src=${mainData?.thumbnail}>
+                            
                         </div>
-
-                        <div class="main">
-                            <h4 class="mt-4 text-2xl font-bold text-[#171717]">${mainData?.title}</h4>
-
-                            <div class="flex">
-                                <p class="text-xl font-normal mt-3">${mainData?.authors[0].profile_name}</p>
-                                ${mainData?.authors[0].verified !== false && mainData?.authors[0].verified !=="" ? '<img class="w-8 h-8 mt-2 ml-2" src="icons/Twitter_Verified_Badge.svg.png">' : ''}
+    
+                        <div class="alla-body  flex">
+    
+                            <div class="profile-img  h-10 rounded min-w-fit pl-2 mt-5 mr-4">
+                                <img src="images/Screenshot_1.png">
                             </div>
-
-                            <p class="text-xl font-normal mt-2">${mainData?.others?.views} </p>
-
-
+    
+                            <div class="main">
+                                <h4 class="mt-4 text-2xl font-bold text-[#171717]">${mainData?.title}</h4>
+    
+                                <div class="flex">
+                                    <p class="text-xl font-normal mt-3">${mainData?.authors[0].profile_name}</p>
+                                    ${mainData?.authors[0].verified !== false && mainData?.authors[0].verified !=="" ? '<img class="w-8 h-8 mt-2 ml-2" src="icons/Twitter_Verified_Badge.svg.png">' : ''}
+                                </div>
+    
+                                <p class="text-xl font-normal mt-2">${mainData?.others?.views} </p>
+    
+    
+                            </div>
+                        
                         </div>
-                    
+        
                     </div>
     
-                </div>
-
-
-
-
-            `;
-
-
-            cardContainer.appendChild(divForCards);
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    
+                `;
+    
+               
+    
+    
+                cardContainer.appendChild(divForCards);
+    
+    
+    
+    
+    
+    
         });
+    
+
+
+
+
+        }
+       
+       
 
 
    
 
+
+
+
     }
+
+
+    allDataByClick(1000);
 
 
 
