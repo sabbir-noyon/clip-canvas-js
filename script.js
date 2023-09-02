@@ -26,7 +26,7 @@ const openBlog = () => {
     data.data.forEach((apiCatagories) => {
       const div = document.createElement("div");
       div.innerHTML = `
-        <a  onclick="allDataByClick('${apiCatagories.category_id}')" class="tab">${apiCatagories.category}</a>
+        <a onclick="allDataByClick('${apiCatagories.category_id}')" class="tab">${apiCatagories.category}</a>
       `;
       tabGetContainer.appendChild(div);
     });
