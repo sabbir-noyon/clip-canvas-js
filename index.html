@@ -1,227 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PH Tube</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClipCanvas</title>
 
-    <!--Google Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!--Font Awesome CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha384-...">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    
-    <!--Tailwind CSS Links / CDN-->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!--Daisy UI CDN-->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!--CSS Link-->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-50 font-[Inter]">
+    <!-- Header -->
+    <header class="bg-white shadow px-4 sm:px-8 py-6 sticky top-0 z-50">
+      <nav class="flex items-center justify-between flex-wrap">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="icons/Logo.png" alt="Logo" class="h-10 w-auto sm:h-12" />
+        </div>
 
-     <!--Navigation Section Start-->
-    <header class="bg-white  mx-auto py-6 px-10 lg:py-10 lg:px-16">
-        <nav class="flex lg:flex-row lg:justify-between flex-col">
-            <img class="lg:w-auto lg:mx-0 w-72 mx-auto mt-6 lg:mt-0" src="icons/Logo.png" alt="Logo">
-
-           <button onclick="sortByViewButton()" id="sort-by-view-button" class=" bg-[#FF1F3D] lg:mr-20   lg:py-3 lg:px-6  w-48  py-3  lg:mx-0 mt-6 lg:mt-0 mx-auto  rounded-lg hover:bg-green-700 outline-none hover:transition-all "><a class="lg:text-lg  lg:font-medium  text-xl font-medium text-white">Sort by View</a></button>
-            
-           
-            <!--modal-->
-           <!-- Open the modal using ID.showModal() method -->
-           <div class="mx-auto lg:mx-0 mt-5 lg:mt-0">
-                <button onclick="openBlog()" class="btn py-3 px-6 bg-[#FF1F3D] text-base font-medium text-white rounded-md hover:text-white  hover:bg-green-700 outline-none  " onclick="my_modal_1.showModal()">Blog</button>
-                <!-- <dialog id="my_modal_1" class="modal">
-                    <form method="dialog" class="modal-box">
-                        <h3 class="font-bold text-lg">Hello!</h3>
-                        <p class="py-4">Press ESC key or click the button below to close</p>
-                        <div class="modal-action"> -->
-                       <!--  if there is a button in form, it will close the modal -->
-                        <!-- <button class="btn py-1 px-4 bg-[#FF1F3D] text-base font-medium text-white rounded-md hover:text-white  hover:bg-green-700 outline-none my-0 mx-auto">Close</button>
-                        </div>
-                    </form>
-                </dialog> --> 
-           </div>
-
-
-        </nav>
-
-        <hr class="hr bg-[#171717] mt-10 ">
-
-  
+        <!-- Sort & Blog -->
+        <div class="flex items-center gap-4 mt-4 sm:mt-0">
+          <button
+            onclick="sortByViewButton()"
+            id="sort-by-view-button"
+            class="bg-[#FF1F3D] text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition"
+          >
+            Sort by View
+          </button>
+          <button
+            onclick="openBlog()"
+            class="bg-[#FF1F3D] text-white font-semibold py-2 px-4 rounded hover:bg-green-700 transition"
+          >
+            Blog
+          </button>
+        </div>
+      </nav>
     </header>
-     <!--Navigation Section End-->
 
-
-     <main>
-
-        <!-- Tab Area of Main Start -->
-        <section>
-
-            <div class="tab-container mt-6 ">
-
-                <div id="tab-get-container"  class="tabs flex justify-center">
-                    <!-- <a class="tab">Tab 1</a> 
-                    <a class="tab">Tab 2</a> 
-                    <a class="tab">Tab 3</a>
-                    <a class="tab">Tab 4</a> -->
-                    <!-- <a onclick="allDataByClick('${apiCatagories.category_id}')"  class="tab">Tab 5</a> -->
-                </div>
-            
-            </div>
-        
-        </section>
-        <!-- Tab Area of Main End -->
-
-
-        <!-- Main / Card Area of Main Start-->
-        <section id="pseudo-section">
-           
-
-        </section>
-
-        <section id="section" class="lg:mt-20 mt-16 lg:px-16 px-8 lg:pb-20 pb-16">
-
-            <div id="card-container-id" class="card-container grid  grid-cols-1   lg:grid-cols-4 gap-6">
-                
-                
-               
-                
-                <!-- Cards -->
-                <!-- <div class="cards pb-6">
-
-                    <div class="card-image" >
-                        <img class="min-w-full min-h-full" src="images/Screenshot_2.png">
-                       
-
-                    </div>
-
-                    <p class=" p-2 bg-gray-950 w-max text-white text-sm font-medium  rounded-lg relative bottom-10 lg:left-72  md:left-72  left-2/4">3 hrs 56 min ago</p>
-
-                    <div class="alla-body  flex">
-
-                        <div class="profile-img  h-10 rounded min-w-fit pl-2 -mt-4 mr-4">
-                            <img src="images/Screenshot_1.png">
-                        </div>
-                        
-                        <div class="main">
-                           
-                            <h4 class="-mt-6 text-2xl font-bold text-[#171717]">Building a Winning UX Strategy Using the Kano Model</h4>
-
-                            <div class="flex">
-                                <p class="text-xl font-normal mt-3">Awlad Hossain</p>
-                                <img class="w-8 h-8 mt-2 ml-2" src="icons/Twitter_Verified_Badge.svg.png">
-                            </div>
-
-                            <p class="text-xl font-normal mt-2">91K views </p>
-
-
-                        </div>
-                    
-                    </div>
-    
-                </div> -->
-
-
-
-                <!-- Cards -->
-                <!-- <div class="cards pb-6">
-
-                    <div class="card-image" >
-                        <img class="min-w-full min-h-full" src="images/Screenshot_2.png">
-                        
-                    </div>
-
-                    <div class="alla-body  flex">
-
-                        <div class="profile-img  h-10 rounded min-w-fit pl-2 mt-5 mr-4">
-                            <img src="images/Screenshot_1.png">
-                        </div>
-
-                        <div class="main">
-                            <h4 class="mt-4 text-2xl font-bold text-[#171717]">Building a Winning UX Strategy Using the Kano Model</h4>
-
-                            <div class="flex">
-                                <p class="text-xl font-normal mt-3">Awlad Hossain</p>
-                                <img class="w-8 h-8 mt-2 ml-2" src="icons/Twitter_Verified_Badge.svg.png">
-                            </div>
-
-                            <p class="text-xl font-normal mt-2">91K views </p>
-
-
-                        </div>
-                    
-                    </div>
-    
-                </div>
-
-
-
-
-                
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            </div>
-
-
-
-
-        </section>
-        <!-- Main / Card Area of Main End-->
-
-
-
-
-
-
-
-
-     </main>
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
+    <!-- Tabs -->
+    <section class="mt-6">
+      <div
+        id="tab-get-container"
+        class="tabs flex justify-center flex-wrap gap-2"
+      ></div>
+    </section>
+
+    <!-- Card Area -->
+    <section id="pseudo-section"></section>
+
+    <section id="section" class="mt-10 px-4 sm:px-8 lg:px-16 pb-20">
+      <div
+        id="card-container-id"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      ></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 text-center">
+      <p class="text-lg font-semibold">&copy; 2023 ClipCanvas. All rights reserved.</p>
+    </footer>
+
+    <!-- Script -->
     <script src="script.js"></script>
-
-</body>
+  </body>
 </html>

@@ -2,31 +2,50 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-
    font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: #fff;
+}
+
+main {
+  flex: 1;
 }
 
 .hr{
    height: 1px;
 }
 
-
-
 /* Main Area Started */ 
 
-
-.tabs a{
-
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 500;
-   color: #252525B2;
-   background-color: #25252526;
-   margin: 8px;
-   border-radius: 8px;
-   min-height: 50px;
-   min-width: 130px;
-  
-
+.tabs a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #252525b2;
+  background-color: #25252526;
+  margin: 6px;
+  border-radius: 8px;
+  min-width: 100px;
+  padding: 10px 16px;
+  text-align: center;
+  transition: all 0.3s ease; 
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
 }
 
+.tabs a:hover {
+  background-color: #ff1f3d;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
