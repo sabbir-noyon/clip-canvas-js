@@ -163,6 +163,6 @@ const sortByViewButton = async () => {
   }
 };
 
-// Initial fetch and rendering of data
+// Fetch and rendering of data
 allDataByClick(1000);
 handleApiCategories();
